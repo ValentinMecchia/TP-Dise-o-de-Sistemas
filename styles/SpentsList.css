@@ -1,0 +1,48 @@
+.spents-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+}
+
+.spent-day {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.spent-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.item__category-circle {
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #00f;
+}
+
+.item__text {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.text__name-category {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.text__amount-time {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+}
