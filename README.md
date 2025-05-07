@@ -6,4 +6,6 @@ Para ejecutar la aplicacion realizar los siguientes pasos:
 
 Drive con toda la documentacion: https://drive.google.com/drive/folders/14EMKM1l1XRjwonkseWXoA8Ccjpug0eMg?usp=drive_link
 
+Excel con el BPMN: https://modeler.camunda.io/share/f3a7392a-8dd7-4cde-a107-0d0ae3d63062
+
 Excel con las hojas de testing: https://o365sanfranciscoutneduar-my.sharepoint.com/:x:/g/personal/vmecchia_facultad_sanfrancisco_utn_edu_ar/EdNkI8xfxyhNvz6dacWHiPgBuls-hBKHxVOP9KrG0m0Elw?e=AqB6Uy
