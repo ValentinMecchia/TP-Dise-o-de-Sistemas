@@ -50,3 +50,10 @@
 .add-spent-space {
     width: 70px;
 }
+
+.bottom-block {
+    bottom: 0;
+    height: 80px;
+    margin: 0;
+    width: 100%;
+}

@@ -1,0 +1,11 @@
+.categories-section {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.unselected-option {
+  color: #8e8e8e;
+  color: red;
+}

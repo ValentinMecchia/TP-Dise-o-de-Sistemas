@@ -1,7 +1,7 @@
 import React from "react";
-import "../styles/SpentsList.css";
+import "./styles/SpentsList.css";
 
-function SpentsList({ spents }) {
+function SpentsList( {spents} ) {
     if (!Array.isArray(spents)) {
         return (
             <div className="no-spents">
@@ -20,7 +20,7 @@ function SpentsList({ spents }) {
     for (let spent of spents) {
         const month = spent.date.slice(5,7)
         const day = spent.date.slice(8,10)
-        if (month == actualMonth) {
+        if (month == actualMonth && spent.date.slice(0,4) == actualYear) {
             if (daysDict[day]) {
                 daysDict[day].push(spent)
             } else {
@@ -28,6 +28,7 @@ function SpentsList({ spents }) {
             }
         }
     }
+
 
 
     return (
@@ -42,9 +43,13 @@ function SpentsList({ spents }) {
                         return (
                             <div key={day} className="spent-day">
                                 <p className="day__title">{day == actualDay ? "Hoy" : actualWeekDay + " " + day}</p>
-                                {arrDay.map((spent, index) => (
+                                {arrDay.sort((a, b) => {
+                                    const timeA = a.time.split(":").map(Number);
+                                    const timeB = b.time.split(":").map(Number);
+                                    return timeB[0] - timeA[0] || timeB[1] - timeA[1];
+                                }).map((spent, index) => (
                                     <div key={index} className="spent-item">
-                                        <div className="item__category-circle"></div>
+                                        <div className="item__category-circle" style={{backgroundColor: spent.color}}></div>
                                         <div className="item__text">
                                             <div className="text__name-category">
                                                 <p className="item__name">{spent.name}</p>

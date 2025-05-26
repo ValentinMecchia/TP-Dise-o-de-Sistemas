@@ -1,6 +1,7 @@
 import React from "react";
-import "../styles/AddSpentModal.css";
+import "./styles/AddSpentModal.css";
 import { useState, useEffect } from "react";
+import CategoriesSection from "./CategoriesSection";
 
 function AddSpentModal(props) {
 
@@ -8,7 +9,7 @@ function AddSpentModal(props) {
     const [time, setTime] = useState("");
     const [name, setNombre] = useState("");
     const [amount, setMonto] = useState("");
-    const [category, setCategoria] = useState("");
+    const [category, setCategoria] = useState([]);
     const [description, setDescripcion] = useState("");
 
 
@@ -48,16 +49,22 @@ function AddSpentModal(props) {
 
         // console.log({ name, amount, category, todaysDate, time, description });
 
+        function capitalizeFirstLetter(val) {
+            return String(val).charAt(0).toUpperCase() + String(val).slice(1);
+        }
+
         const newSpent = {
-            name,
-            amount,
-            category,
+            name: capitalizeFirstLetter(name),
+            amount: capitalizeFirstLetter(amount),
+            category: capitalizeFirstLetter(category[0]),
+            color: category[1],
+            groupLabel: category[2],
             date: todaysDate,
             time,
-            description,
+            description: capitalizeFirstLetter(description),
         };
 
-        props.handleAddSpent({newSpent});
+        props.addSpent(newSpent);
         props.setShowModal(false);
     };
     
@@ -73,7 +80,7 @@ function AddSpentModal(props) {
                     <form className="modal__form" onSubmit={handleSubmit}>
                         <input type="text" placeholder="Nombre" required onChange={(e) => setNombre(e.target.value)} className="form__input" minLength="3" maxLength="50" id="name"/>
                         <input type="number" placeholder="Monto" required onChange={(e) => setMonto(e.target.value)} className="form__input" id="amount"/>
-                        <input type="text" placeholder="Categoria" required onChange={(e) => setCategoria(e.target.value)} className="form__input" minLength="3" id="category"/>
+                        <CategoriesSection className="form__input" required onChange={(e) => setCategoria([e.label, e.color, e.groupLabel])}/>
                         <div className="form__date-time">
                             <input type="date" value={todaysDate} onChange={(e) => setTodaysDate(e.target.value)} required className="form__input date-time" id="date"/>
                             <input type="time" value={time} onChange={(e) => setTime(e.target.value)} required className="form__input date-time" id="time"/>
