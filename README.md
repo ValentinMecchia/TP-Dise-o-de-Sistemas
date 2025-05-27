@@ -2,7 +2,13 @@ Para ejecutar la aplicacion realizar los siguientes pasos:
 1. Abrir una nueva terminal
 2. Ir a la carpeta del proyecto (cd "directorio_de_la_carpeta"/App_Gestion_de_Gastos)
 3. Escribir en consola "npm install"
-4. Escribir en consola "npm run dev"
+4. Ir a la carpeta Client (cd ./Client)
+5. Escribir en consola "npm install"
+6. Escribir en consola "npm run dev"
+4. Ir a la carpeta Server (cd ./Server)
+5. Escribir en consola "npm install"
+6. Escribir en consola "nodemon ./server.js"
+
 
 Drive con toda la documentacion: https://drive.google.com/drive/folders/14EMKM1l1XRjwonkseWXoA8Ccjpug0eMg?usp=drive_link
 
